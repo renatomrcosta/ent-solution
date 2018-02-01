@@ -23,16 +23,29 @@ import localeDe from '@angular/common/locales/de';
 import localeDeAt from '@angular/common/locales/de-AT';
 import localeEs from '@angular/common/locales/es';
 import {LoggerModule} from "logger-lib";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 
 registerLocaleData(localeDe);     // de-DE
 registerLocaleData(localeDeAt);   // de-AT
 registerLocaleData(localeEs);     // es-ES
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, "/assets/i18n/", ".json");
+}
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        }
+    }),
     LoggerModule.forRoot({enableDebug: true}),
     FlightBookingModule,
     FlightApiModule.forRoot(),
