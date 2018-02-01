@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Flight } from '@flight-workspace/flight-api';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { FlightService } from '@flight-workspace/flight-api';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'flight-search',
@@ -25,7 +26,7 @@ export class FlightSearchComponent implements OnInit {
   };
 
   constructor(
-    private flightService: FlightService) {
+    private flightService: FlightService, private translate: TranslateService) {
   }
 
   ngOnInit() {
@@ -41,6 +42,7 @@ export class FlightSearchComponent implements OnInit {
 
   delay(): void {
     this.flightService.delay();
+    this.translate.use('en');
   }
 
 }
