@@ -1,16 +1,15 @@
-import { Component, OnInit, Renderer, ViewChild, ElementRef } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import {Component} from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
     selector: 'navbar-cmp',
     templateUrl: 'navbar.component.html'
 })
 export class NavbarComponent {
-    
+
     private sidebarVisible: boolean = false;
 
-    constructor() {
+    constructor(private translate: TranslateService) {
     }
 
     sidebarToggle(){
@@ -23,5 +22,9 @@ export class NavbarComponent {
             this.sidebarVisible = false;
             body.classList.remove('nav-open');
         }
+    }
+
+    setLang(lang:string){
+      this.translate.use(lang);
     }
 }

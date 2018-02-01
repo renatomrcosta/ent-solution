@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Flight } from '@flight-workspace/flight-api';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { FlightService } from '@flight-workspace/flight-api';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'flight-search',
