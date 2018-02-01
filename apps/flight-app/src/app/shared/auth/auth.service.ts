@@ -7,7 +7,7 @@ export class AuthService {
   constructor(){}
 
   login(login:string, password:string) {
-    if(login === 'Bananinha' && password === 'asd'){
+    if(login.toLowerCase() === 'bananinha' && password === 'asd'){
       this.userName = "Bananinha";
     } else {
       this.logout();

@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   needsLogin: boolean;
   login: string;
+  password: string;
 
   ngOnInit() {
     this.needsLogin = !!this.route.snapshot.params['needsLogin'];
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   doLogin(): void {
-    this.authService.login();
+    this.authService.login(this.login, this.password);
   }
 
   doLogout(): void {
