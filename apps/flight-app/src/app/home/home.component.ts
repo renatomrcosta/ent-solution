@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private authService: AuthService) { }
 
   needsLogin: boolean;
+  login: string;
+
   ngOnInit() {
     this.needsLogin = !!this.route.snapshot.params['needsLogin'];
   }
@@ -21,11 +23,11 @@ export class HomeComponent implements OnInit {
     return this.authService.userName;
   }
 
-  login(): void {
+  doLogin(): void {
     this.authService.login();
   }
 
-  logout(): void {
+  doLogout(): void {
     this.authService.logout();
   }
 
