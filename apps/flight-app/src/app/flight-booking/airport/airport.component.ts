@@ -8,14 +8,20 @@ import {AirportService} from "@flight-workspace/flight-api";
 })
 export class AirportComponent implements OnInit {
 
-  get airports() {
-    return this.airportService.findAll();
-  }
+  private airports: string[] = [];
 
   constructor(
     private airportService: AirportService) {
   }
 
   ngOnInit() {
+    this.fetchAirports();
+  }
+
+  private fetchAirports() {
+    return this.airportService.findAll().subscribe( airports => {
+      this.airports = airports;
+      }
+    );
   }
 }
