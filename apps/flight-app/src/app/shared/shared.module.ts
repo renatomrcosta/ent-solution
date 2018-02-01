@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CityPipe } from './pipes/city.pipe';
 import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
+import {LogFormatterService} from "logger-lib";
+import {CustomLogFormatterService} from "./logging/custom-log-formatter.service";
 
 @NgModule({
   imports: [
@@ -19,6 +21,10 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
+        {
+          provide: LogFormatterService,
+          useClass: CustomLogFormatterService
+        }
       ]
     }
   }
