@@ -31,6 +31,7 @@ registerLocaleData(localeEs);     // es-ES
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     LoggerModule.forRoot({enableDebug: true}),
     FlightBookingModule,
