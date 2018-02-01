@@ -11,7 +11,7 @@ import {LoggerService} from "logger-lib";
 export class AppComponent  {
   constructor(private router: Router, private loggerService: LoggerService) {
     this.loggerService.log('ASD');
-    this.loggerService.debug('ASD');
+    this.loggerService.debug('bananinha');
   }
 }
 
