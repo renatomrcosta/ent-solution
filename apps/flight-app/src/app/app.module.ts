@@ -22,6 +22,7 @@ import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import localeDeAt from '@angular/common/locales/de-AT';
 import localeEs from '@angular/common/locales/es';
+import {LoggerModule} from "logger-lib/index";
 
 registerLocaleData(localeDe);     // de-DE
 registerLocaleData(localeDeAt);   // de-AT
@@ -34,7 +35,8 @@ registerLocaleData(localeEs);     // es-ES
     FlightBookingModule,
     FlightApiModule.forRoot(),
     SharedModule.forRoot(),
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    LoggerModule
   ],
   declarations: [
     AppComponent,
