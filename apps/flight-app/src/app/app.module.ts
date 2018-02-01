@@ -32,11 +32,11 @@ registerLocaleData(localeEs);     // es-ES
   imports: [
     BrowserModule,
     HttpClientModule,
+    LoggerModule.forRoot({enableDebug: true}),
     FlightBookingModule,
     FlightApiModule.forRoot(),
     SharedModule.forRoot(),
     RouterModule.forRoot(APP_ROUTES),
-    LoggerModule.forRoot({enableDebug: true})
   ],
   declarations: [
     AppComponent,
