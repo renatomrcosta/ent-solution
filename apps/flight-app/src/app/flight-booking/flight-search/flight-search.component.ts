@@ -42,7 +42,6 @@ export class FlightSearchComponent implements OnInit {
 
   delay(): void {
     this.flightService.delay();
-    this.translate.use('en');
   }
 
 }
