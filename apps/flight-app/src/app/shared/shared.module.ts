@@ -8,6 +8,7 @@ import {AuthService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth.guard";
 import {DeactivateGuard} from "./deactivation/deactivate.guard";
 import {AuthInterceptor} from "./auth/auth.interceptor";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -22,8 +23,7 @@ import {AuthInterceptor} from "./auth/auth.interceptor";
   providers: [
     AuthService,
     AuthGuard,
-    DeactivateGuard,
-    AuthInterceptor
+    DeactivateGuard
   ]
 })
 export class SharedModule {
@@ -34,6 +34,11 @@ export class SharedModule {
         {
           provide: LogFormatterService,
           useClass: CustomLogFormatterService
+        },
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: AuthInterceptor,
+          multi: true
         }
       ]
     }
