@@ -9,6 +9,7 @@ import {AuthGuard} from "./auth/auth.guard";
 import {DeactivateGuard} from "./deactivation/deactivate.guard";
 import {AuthInterceptor} from "./auth/auth.interceptor";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AuthConfig} from "angular-oauth2-oidc";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
   ],
   exports: [
     CityPipe,
+    AuthConfig
   ],
   providers: [
     AuthService,
