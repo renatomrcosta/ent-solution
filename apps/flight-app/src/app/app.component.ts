@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import {LoggerService} from "logger-lib";
 import {TranslateService} from "@ngx-translate/core";
 import {JwksValidationHandler, OAuthService} from "angular-oauth2-oidc";
-import {authConfig} from "./auth.config";
+import {authConfig} from "./shared/auth/auth.config";
 
 
 @Component({
