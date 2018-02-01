@@ -4,6 +4,7 @@ import { PassengerSearchComponent } from './passenger-search/passenger-search.co
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
 import { FlightBookingComponent } from './flight-booking.component';
 import {AirportComponent} from "./airport/airport.component";
+import {AuthGuard} from "../shared/auth/auth.guard";
 
 export const FLIGHT_BOOKING_ROUTES: Routes = [
   {
@@ -24,7 +25,8 @@ export const FLIGHT_BOOKING_ROUTES: Routes = [
       },
       {
         path: 'airport',
-        component: AirportComponent
+        component: AirportComponent,
+        canActivate: [AuthGuard]
       }
     ]
   }
