@@ -6,6 +6,7 @@ import {LogFormatterService} from "logger-lib";
 import {CustomLogFormatterService} from "./logging/custom-log-formatter.service";
 import {AuthService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth.guard";
+import {DeactivateGuard} from "./deactivation/deactivate.guard";
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {AuthGuard} from "./auth/auth.guard";
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    DeactivateGuard
   ]
 })
 export class SharedModule {
