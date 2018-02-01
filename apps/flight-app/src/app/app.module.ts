@@ -22,7 +22,7 @@ import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import localeDeAt from '@angular/common/locales/de-AT';
 import localeEs from '@angular/common/locales/es';
-import {LoggerModule} from "logger-lib/index";
+import {LoggerModule} from "logger-lib";
 
 registerLocaleData(localeDe);     // de-DE
 registerLocaleData(localeDeAt);   // de-AT
