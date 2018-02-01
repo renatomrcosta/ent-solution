@@ -3,5 +3,5 @@ import {Observable} from "rxjs/Observable";
 
 @Injectable
 export interface CanDeactivateComponent {
-  CanDeactivate : Observable<boolean>;
+  canDeactivate(): Observable<boolean>;
 }
