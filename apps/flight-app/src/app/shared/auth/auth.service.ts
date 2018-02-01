@@ -1,21 +1,18 @@
 import {Injectable} from "@angular/core";
+import {OAuthService} from "angular-oauth2-oidc";
 
 @Injectable()
 export class AuthService {
   userName: string;
 
-  constructor(){}
+  constructor(private oauthService: OAuthService){}
 
   login(login:string, password:string) {
-    if(login.toLowerCase() === 'bananinha' && password === 'asd'){
-      this.userName = "Bananinha";
-    } else {
-      this.logout();
-    }
+    this.oauthService.initImplicitFlow();
   }
 
   logout(){
-    this.userName = null;
+    this.oauthService.logOut();
   }
 
 }
