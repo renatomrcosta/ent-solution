@@ -36,7 +36,7 @@ registerLocaleData(localeEs);     // es-ES
     FlightApiModule.forRoot(),
     SharedModule.forRoot(),
     RouterModule.forRoot(APP_ROUTES),
-    LoggerModule
+    LoggerModule.forRoot({enableDebug: true})
   ],
   declarations: [
     AppComponent,
