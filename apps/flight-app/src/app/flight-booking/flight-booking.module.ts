@@ -17,6 +17,7 @@ import {AirportComponent} from "./airport/airport.component";
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule.forChild(),
     SharedModule.forChild(),
     RouterModule.forChild(FLIGHT_BOOKING_ROUTES)
   ],
