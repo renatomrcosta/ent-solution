@@ -17,6 +17,5 @@ export class AirportComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 }
