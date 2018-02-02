@@ -25,6 +25,7 @@ import localeEs from '@angular/common/locales/es';
 import {LoggerModule} from "logger-lib";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {OAuthModule} from "angular-oauth2-oidc";
 
 registerLocaleData(localeDe);     // de-DE
 registerLocaleData(localeDeAt);   // de-AT
@@ -46,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
         }
     }),
+    OAuthModule.forRoot(),
     LoggerModule.forRoot({enableDebug: true}),
     FlightBookingModule,
     FlightApiModule.forRoot(),

@@ -18,7 +18,7 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
     CityPipe,
   ],
   exports: [
-    CityPipe,
+    CityPipe
   ],
   providers: [
     AuthService,
